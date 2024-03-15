@@ -1,5 +1,6 @@
 <head>
   <%= csrf_meta_tags %>
+  <meta name="api-base-url" content="<%= request.base_url + request.script_name %>">
   <!-- if development -->
   <script type="module" src="http://localhost:5173/@vite/client"></script>
   <script type="module" src="http://localhost:5173/src/main.ts"></script>

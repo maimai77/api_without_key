@@ -1,6 +1,11 @@
 export function setupResponse(element: HTMLButtonElement) {
   const setResponse = async () => {
-    const response = await fetch("/projects.json", {
+    const baseURL =
+      document
+        .querySelector("meta[name='api-base-url']")
+        ?.getAttribute("content") || "";
+    const url = new URL("projects.json", baseURL);
+    const response = await fetch(url, {
       headers: {
         "X-CSRF-Token":
           document
